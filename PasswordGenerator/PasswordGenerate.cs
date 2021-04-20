@@ -39,7 +39,11 @@ namespace PasswordGenerator
             {
                 foreach (char itm in request.DenyChars)
                 {
-                    validChars = validChars.Remove(validChars.IndexOf(itm), 1);
+                    try
+                    {
+                        validChars = validChars.Remove(validChars.IndexOf(itm), 1);
+                    }
+                    catch { }
                 }
             }
             if (string.IsNullOrEmpty(validChars))
